@@ -5,6 +5,8 @@
       <Twitter :username="username" />
       <hr />
       <Products />
+      <hr>
+      <Posts />
     </div>
   </div>
 </template>
@@ -12,10 +14,11 @@
 <script>
 import Twitter from "./components/twitter/Twitter";
 import Products from "./components/products/Products";
+import Posts from './components/posts/Posts';
 
 export default {
   name: "App",
-  components: { Twitter, Products },
+  components: { Twitter, Products, Posts },
   data() {
     return {
       username: ''

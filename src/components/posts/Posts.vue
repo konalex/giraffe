@@ -1,7 +1,7 @@
 <template>
-  <div class="products">
-		<h2>Products</h2>
-		<List :items="products" />
+  <div class="posts">
+		<h2>Posts</h2>
+		<List :items="posts" />
   </div>
 </template>
 
@@ -10,15 +10,15 @@ import { get } from "../../utils";
 import List from "../shared/List";
 
 export default {
-  name: "Products",
+  name: "Posts",
 	components: { List },
 	data() {
 		return {
-			products: []
+			posts: []
 		}
 	},
   async mounted() {
-    this.products = await get("products");
+    this.posts = await get("posts");
   }
 };
 </script>

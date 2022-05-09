@@ -4,6 +4,8 @@ export function get(type, query) {
       return users(query);
     case "products":
       return products();
+		case "posts":
+			return posts()
     default:
       return [];
   }
@@ -12,6 +14,16 @@ export function get(type, query) {
 async function users(query) {
 	try {
 		const response = await fetch("https://jsonplaceholder.typicode.com/users" + (query ? '?' + query : ''));
+		return response.json();
+	}
+	catch(error) {
+		return [];
+	}
+}
+
+async function posts() {
+	try {
+		const response = await fetch("https://jsonplaceholder.typicode.com/posts");
 		return response.json();
 	}
 	catch(error) {

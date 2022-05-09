@@ -24,11 +24,12 @@ export default {
 		}
 	},
 	watch: {
-		username:{
+		username: {
 			handler() {
 				this.search()
-			}
-		}, immediate: true
+			},
+			immediate: true
+		}
 	},
   methods: {
 		async search() {
